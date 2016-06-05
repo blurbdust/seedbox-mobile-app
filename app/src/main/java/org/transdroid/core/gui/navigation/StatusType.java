@@ -134,6 +134,8 @@ public enum StatusType {
 						|| torrent.isSeeding(dormantAsInactive);
 			case OnlyInactive:
 				return !torrent.isDownloading(dormantAsInactive) && !torrent.isSeeding(dormantAsInactive);
+				case Completed:
+					return torrent.isFinished();
 			default:
 				return true;
 			}
