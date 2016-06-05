@@ -57,6 +57,11 @@ public enum StatusType {
 		public StatusTypeFilter getFilterItem(Context context) {
 			return new StatusTypeFilter(StatusType.OnlyInactive, context.getString(R.string.navigation_status_onlyinactive));
 		}
+	},
+	Completed {
+		public StatusTypeFilter getFilterItem(Context context) {
+			return new StatusTypeFilter(StatusType.Completed, context.getString(R.string.navigation_status_completed));
+		}
 	};
 
 	/**
@@ -76,7 +81,7 @@ public enum StatusType {
 	public static List<StatusTypeFilter> getAllStatusTypes(Context context) {
 		return Arrays.asList(ShowAll.getFilterItem(context), OnlyDownloading.getFilterItem(context),
 				OnlyUploading.getFilterItem(context), OnlyActive.getFilterItem(context),
-				OnlyInactive.getFilterItem(context));
+				OnlyInactive.getFilterItem(context), Completed.getFilterItem(context));
 	}
 
 	/**
