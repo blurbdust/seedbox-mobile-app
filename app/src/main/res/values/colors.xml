@@ -25,6 +25,15 @@
     <color name="colorSecondaryText">#727272</color>
     <color name="colorIcons">#FFFFFF</color>
     <color name="colorDivider">#B6B6B6</color>
+    <color name="colorStatusBar">#E0E0E0</color>
+    <color name="colorBackground">#FAFAFA</color>
+    <color name="colorForeground">#FFFFFF</color>
+    <color name="colorNavigationBar">#000000</color>
+    <color name="colorBackgroundDark">#303030</color>
+    <color name="colorForegroundDark">#424242</color>
+
+
+
     <!-- General layout colours
     <color name="green_light">#A5D6A7</color>
     <color name="green">#388E3C</color>
