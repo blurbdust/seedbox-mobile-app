@@ -271,6 +271,7 @@ public class NavigationHelper {
 	 * @return True if search is enabled, false otherwise
 	 */
 	public boolean enableSearchUi() {
+		//return true;
 		return context.getResources().getBoolean(R.bool.search_available);
 	}
 
@@ -297,7 +298,8 @@ public class NavigationHelper {
 	 * example), false otherwise
 	 */
 	public boolean enableUpdateChecker() {
-		return context.getResources().getBoolean(R.bool.updatecheck_available);
+		return false;
+		//return context.getResources().getBoolean(R.bool.updatecheck_available);
 	}
 
 }

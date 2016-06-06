@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_all"
+            android:icon="@drawable/ic_menu_all"
+            android:title="@string/navigation_status_showall" />
+        <item
+            android:id="@+id/nav_downloading"
+            android:icon="@drawable/ic_menu_downloading"
+            android:title="@string/navigation_status_onlydown" />
+        <item
+            android:id="@+id/nav_uploading"
+            android:icon="@drawable/ic_menu_uploading"
+            android:title="@string/navigation_status_onlyup" />
+        <item
+            android:id="@+id/nav_completed"
+            android:icon="@drawable/ic_menu_completed"
+            android:title="@string/navigation_status_completed" />
+
+    </group>
+
+</menu>

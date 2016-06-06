@@ -46,6 +46,7 @@ dependencies {
         transitive = true
     }
     apt 'org.androidannotations:androidannotations:3.3.2'
+    compile 'com.android.support:design:23.4.0'
 }
 
 apt {

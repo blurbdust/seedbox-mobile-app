@@ -88,5 +88,11 @@
 		<item name="android:padding">@dimen/ui_bignumber_padding</item>
 		<item name="android:textSize">@dimen/ui_bignumber_size</item>
 	</style>
-	
+
+	<style name="default_theme" parent="Theme.AppCompat.Light.NoActionBar" >
+		<item name="colorPrimary">@color/colorPrimary</item>
+		<item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+		<item name="colorAccent">@color/colorAccent</item>
+	</style>
+
 </resources>

@@ -90,12 +90,14 @@
 	</RelativeLayout>
 
 	<!-- The navigation drawer -->
+
 	<LinearLayout
 		android:id="@+id/drawer_container"
 		android:layout_width="@dimen/ui_filters_list"
 		android:layout_height="match_parent"
 		android:layout_gravity="start"
-		android:background="?attr/drawer_background"
+		android:background="@color/colorSecondaryText"
+		app:headerLayout="@layout/nav_header_main"
 		android:orientation="vertical">
 
 		<ListView
@@ -118,7 +120,6 @@
 			app:iconifiedByDefault="false"
 			app:queryHint="@string/action_filter"
 			app:searchIcon="@drawable/ic_action_filter" />
-
 	</LinearLayout>
 
 </android.support.v4.widget.DrawerLayout>

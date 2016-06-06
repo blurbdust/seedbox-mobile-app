@@ -107,7 +107,7 @@ public class Label implements SimpleListItem, NavigationFilter, Comparable<Label
 				localLabels.add(new Label(label));
 			}
 		}
-		Collections.sort(localLabels);
+		//Collections.sort(localLabels);
 		return localLabels;
 	}
 

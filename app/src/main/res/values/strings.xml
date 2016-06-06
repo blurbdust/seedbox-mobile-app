@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   Copyright 2010-2013 Eric Kok et al.
   
   Transdroid is free software: you can redistribute it and/or modify
@@ -73,8 +72,8 @@
 
 	<string name="navigation_opendrawer">Select server and filter</string>
 	<string name="navigation_closedrawer">Close filters list</string>
-	<string name="navigation_nosettings">%1$s allows you to monitor and manage the torrent client you run at home or on your seedbox. Setting things up can be a bit tricky, but we offer step-by-step guides and promise it\'ll be worth it!</string>
-	<string name="navigation_emptytorrents">Connected, but no torrents are active within the current filter</string>
+	<string name="navigation_nosettings"></string>
+	<string name="navigation_emptytorrents">No torrents to list</string>
 	<string name="navigation_emptydetails">Select a torrent to view its details</string>
 	<string name="navigation_servers">Servers</string>
 	<string name="navigation_status">Status</string>
@@ -98,7 +97,7 @@
 	<string name="navigation_invertselection">Invert selection</string>
 	<string name="navigation_pickserver">Add torrent to&#8230;</string>
 	<string name="navigation_url_hint" translatable="false">http://…</string>
-	
+
 	<string name="status_status">STATUS: %1$s</string>
 	<string name="status_waiting">Waiting to check&#8230;</string>
 	<string name="status_checking">Verifying local data&#8230;</string>
@@ -150,7 +149,7 @@
 		<item quantity="other">%1$s added, %2$s finished torrents</item>
 	</plurals>
 	<string name="status_service_andothers">%1$s and others</string>
-	
+
 	<string name="labels_showall">All labels</string>
 	<string name="labels_unlabeled">Unlabeled</string>
 	<string name="labels_newlabel">New label</string>
@@ -158,8 +157,8 @@
 	<string name="status_label_pick">PICK A LABEL</string>
 	<string name="status_label_new">NEW LABEL</string>
 	<string name="status_label_remove">Remove label</string>
-	<string name="status_label_hint">E.g. movies or linux</string>
-	
+	<string name="status_label_hint">New Label</string>
+
 	<string name="result_added">%1$s added (refreshing)</string>
 	<string name="result_removed">%1$s removed</string>
 	<string name="result_removed_with_data">%1$s removed and data deleted</string>
@@ -178,7 +177,7 @@
 	<string name="result_locationset">Torrent moved to \'%1$s\'</string>
 	<string name="result_priotitiesset">File priorities updated</string>
 	<string name="result_maxspeedsset">Maximum transfer speeds set</string>
-	
+
 	<string name="search_torrentsearch">Torrent search</string>
 	<string name="search_queryonsite">\'%1$s\' on %2$s</string>
 	<string name="search_hint">Search for torrents</string>
@@ -193,7 +192,7 @@
 		<item quantity="one">%1$d result selected</item>
 		<item quantity="other">%1$d results selected</item>
 	</plurals>
-	
+
 	<string name="rss_feeds">RSS feeds</string>
 	<string name="rss_nosettings">You have not defined any RSS feeds yet to monitor. Torrent-specific RSS feeds keep you up to date with new releases and you are notified of new items.</string>
 	<string name="rss_noselection">Select an RSS feed to view the new items</string>
@@ -209,7 +208,7 @@
 		<item quantity="other">%1$s new RSS feed torrents</item>
 	</plurals>
 	<string name="rss_service_newfor">New torrents for %1$s</string>
-	
+
 	<string name="pref_servers">Servers</string>
 	<string name="pref_addserver">Add new server</string>
 	<string name="pref_addserver_normal">Add New Server</string>
@@ -224,7 +223,7 @@
 	<string name="pref_addrssfeed">Add RSS feed</string>
 	<string name="pref_others">Other settings</string>
 	<string name="pref_confirmremove">Are you sure you want to remove these settings?</string>
-	
+
 	<string name="pref_name">Name</string>
 	<string name="pref_name_optional">Optional personal name</string>
 	<string name="pref_searchurl">Direct search URL</string>
@@ -240,7 +239,7 @@
 	<string name="pref_alarmrssexclude_info">Don\'t show torrents whose name matches these |-separated words</string>
 	<string name="pref_alarmrssinclude">Include filter</string>
 	<string name="pref_alarmrssinclude_info">Only show torrents whose name matches these |-separated words</string>
-	
+
 	<string name="pref_servertype">Server type</string>
 	<string name="pref_address">IP or host name</string>
 	<string name="pref_port">Port number</string>
@@ -282,7 +281,7 @@
 	<string name="pref_sslkey_info">Permit only connections to this specific certificate</string>
 	<string name="pref_sslacceptall">Accept all SSL certificates</string>
 	<string name="pref_sslacceptall_info">Allow all connections from any thumbprint</string>
-	
+
 	<string name="pref_background">Background notifications</string>
 	<string name="pref_notifications_rss">Enable RSS notifications</string>
 	<string name="pref_notifications_torrent">Enable torrent notifications</string>
@@ -295,7 +294,7 @@
 	<string name="pref_notifyled_info">If supported by your device</string>
 	<string name="pref_adw">Support ADW notifications</string>
 	<string name="pref_adw_info">Show torrent counter in ADW Launcher</string>
-	
+
 	<string name="pref_system">System</string>
 	<string name="pref_autorefresh">Automatic refreshing</string>
 	<string name="pref_autorefresh_info">Interval-based refresh of the main screen</string>
@@ -331,7 +330,7 @@
 	<string name="pref_export_tofile">To file</string>
 	<string name="pref_export_toqr">To QR code</string>
 	<string name="pref_export_success">Settings successfully exported</string>
-	
+
 	<string name="pref_help">Help</string>
 	<string name="pref_sendlog">Send error log</string>
 	<string name="pref_sendlog_info">Get support or report a bug</string>
@@ -339,14 +338,14 @@
 	<string name="pref_installhelp_info"></string>
 	<string name="pref_changelog">Recent changes</string>
 	<string name="pref_about">About %1$s</string>
-	
+
 	<string name="pref_seedbox_addseedbox">Add %1$s seedbox</string>
 	<string name="pref_seedbox_client">Torrent client</string>
 	<string name="pref_seedbox_client_info">Client to connect to</string>
 	<string name="pref_seedbox_server">Server address</string>
 
-	
-    <string-array name="pref_daemon_types" translatable="false">
+
+	<string-array name="pref_daemon_types" translatable="false">
         <item>Deluge 1.2+</item>
         <item>rTorrent</item>
     </string-array>
@@ -415,15 +414,25 @@
 	<string name="error_notalabel">Please enter a valid label or pick from the list</string>
 	<string name="error_stillloadingdetails">Please wait until the torrent details have been loaded</string>
 	<string name="error_noftpapp">No app found that can download %1$s</string>
-	
+
 	<string name="update_app_newversion"></string>
 	<string name="update_search_newversion"></string>
 	<string name="update_updateto">You can now update to %1$s</string>
-	
+
 	<string name="system_developer" translatable="false">Credit to Eric Kok</string>
 	<string name="system_license" translatable="false">Published under GNU General Public License v3</string>
 	<string name="system_librarieslabel">Some code/libraries are used in the project:</string>
 	<string name="system_libraries" translatable="false">AndroidAnnotations\n \u00A0 http://androidannotations.org/\n \u00A0 Pierre-Yves Ricau (eBusinessInformations) et al.  \n \u00A0 Apache License, Version 2.0\nMaterial Dialogs\n \u00A0 https://github.com/afollestad/material-dialogs\n \u00A0 Aidan Follestad et al.  \n \u00A0 William Mora et al.  \n \u00A0 MIT License\nFloatingActionButton\n \u00A0 https://github.com/futuresimple/android-floating-action-button\n \u00A0 Jerzy Chałupski et al.  \n \u00A0 Apache License, Version 2.0\nBase16Encoder\n \u00A0 http://openjpa.apache.org/\n \u00A0 Marc Prud\'hommeaux  \n \u00A0 Apache OpenJPA\n MultipartEntity  \n \u00A0 Apache Software Foundation  \n \u00A0 Apache License, Version 2.0\nRssParser (learning-android)\n \u00A0 http://github.com/digitalspaghetti/learning-android\n \u00A0 Tane Piper  \n \u00A0 Public Domain\nBase64\n \u00A0 http://iharder.net/base64\n \u00A0 Robert Harder  \n \u00A0 Public Domain\naXMLRPC\n \u00A0 https://github.com/timroes/aXMLRPC\n \u00A0 Tim Roes  \n \u00A0 MIT License\nandroid-ColorPickerPreference\n \u00A0 https://github.com/attenzione/android-ColorPickerPreference\n \u00A0 Daniel Nilsson and Sergey Margaritov  \n \u00A0 Apache License, Version 2.0\nFunnel icon\n \u00A0 http://thenounproject.com/noun/funnel/#icon-No5608\n \u00A0 Naomi Atkinson from The Noun Project\n \u00A0 Creative Commons Attribution 3.0</string>
 	<string name="system_description">Manage the Seedbox from an Android device</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_example">Example action</string>
 
 </resources>

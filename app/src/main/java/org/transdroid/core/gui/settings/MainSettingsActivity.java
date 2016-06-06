@@ -175,7 +175,7 @@ public class MainSettingsActivity extends PreferenceCompatActivity {
 		addPreferencesFromResource(R.xml.pref_main);
 		findPreference("header_addserver").setOnPreferenceClickListener(onAddServer);
 		if (enableSearchUi) {
-			findPreference("header_addwebsearch").setOnPreferenceClickListener(onAddWebsearch);
+			//findPreference("header_addwebsearch").setOnPreferenceClickListener(onAddWebsearch);
 		}
 		if (enableRssUi) {
 			findPreference("header_addrssfeed").setOnPreferenceClickListener(onAddRssfeed);
