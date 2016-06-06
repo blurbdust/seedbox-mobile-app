@@ -17,11 +17,13 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
 	<style name="TransdroidTheme" parent="Theme.Transdroid.Light">
+		<item name="android:windowTranslucentStatus">true</item>
 		<item name="drawer_background">@color/background_light</item>
 		<item name="activatable_background">@drawable/activatable_background</item>
 	</style>
 
 	<style name="TransdroidTheme.Dark" parent="Theme.Transdroid.Dark">
+		<item name="android:windowTranslucentStatus">true</item>
 		<item name="drawer_background">@color/background_dark</item>
 		<item name="activatable_background">@drawable/activatable_background</item>
 	</style>
@@ -94,5 +96,7 @@
 		<item name="colorPrimaryDark">@color/colorPrimaryDark</item>
 		<item name="colorAccent">@color/colorAccent</item>
 	</style>
+
+
 
 </resources>
