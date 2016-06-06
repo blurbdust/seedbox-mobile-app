@@ -1,21 +1,16 @@
 package org.transdroid.full;
 
-import android.content.Context;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
+
 import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
-import android.support.design.widget.NavigationView;
-import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -26,7 +21,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
-
 import org.transdroid.R;
 
 /**
@@ -34,9 +28,7 @@ import org.transdroid.R;
  * See the <a href="https://developer.android.com/design/patterns/navigation-drawer.html#Interaction">
  * design guidelines</a> for a complete explanation of the behaviors implemented here.
  */
-public class NavigationDrawerFragment extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener{
-//public class NavigationDrawerFragment extends Fragment {
+public class NavigationDrawerFragment extends Fragment {
 
     /**
      * Remember the position of the selected item.
@@ -61,25 +53,24 @@ public class NavigationDrawerFragment extends AppCompatActivity
 
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerListView;
-    private NavigationView mFragmentContainerView = (NavigationView) findViewById(R.id.nav_view);
+    private View mFragmentContainerView;
 
     private int mCurrentSelectedPosition = 0;
     private boolean mFromSavedInstanceState;
     private boolean mUserLearnedDrawer;
-    protected Context mContext = this;
-    public Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
     public NavigationDrawerFragment() {
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setSupportActionBar(toolbar);
+
         // Read in the flag indicating whether or not the user has demonstrated awareness of the
         // drawer. See PREF_USER_LEARNED_DRAWER for details.
-        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(mContext);
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getActivity());
         mUserLearnedDrawer = sp.getBoolean(PREF_USER_LEARNED_DRAWER, false);
-       // Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
         if (savedInstanceState != null) {
             mCurrentSelectedPosition = savedInstanceState.getInt(STATE_SELECTED_POSITION);
             mFromSavedInstanceState = true;
@@ -87,30 +78,20 @@ public class NavigationDrawerFragment extends AppCompatActivity
 
         // Select either the default item (0) or the last selected item.
         selectItem(mCurrentSelectedPosition);
-        mFragmentContainerView.setNavigationItemSelectedListener(this);
-        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //Add new torrent button
-                Snackbar.make(view, "Hello Brian! Testing.", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
     }
 
-  /*  @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
+    @Override
+    public void onActivityCreated (Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         // Indicate that this fragment would like to influence the set of actions in the action bar.
         setHasOptionsMenu(true);
-    }*/
+    }
 
-    //@Override
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         mDrawerListView = (ListView) inflater.inflate(
-                R.layout.app_bar_main, container, false);
+                R.layout.drawer_main, container, false);
         mDrawerListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -141,9 +122,8 @@ public class NavigationDrawerFragment extends AppCompatActivity
      * @param drawerLayout The DrawerLayout containing this fragment's UI.
      */
     public void setUp(int fragmentId, DrawerLayout drawerLayout) {
-
-        mFragmentContainerView = (NavigationView) findViewById(R.id.nav_view); //getActivity().findViewById(fragmentId);
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mFragmentContainerView = getActivity().findViewById(fragmentId);
+        mDrawerLayout = drawerLayout;
 
         // set a custom shadow that overlays the main content when the drawer opens
         mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
@@ -155,40 +135,40 @@ public class NavigationDrawerFragment extends AppCompatActivity
 
         // ActionBarDrawerToggle ties together the the proper interactions
         // between the navigation drawer and the action bar app icon.
-        android.support.v7.app.ActionBarDrawerToggle toggle = new android.support.v7.app.ActionBarDrawerToggle(
-                this,                    /* host Activity */
+        mDrawerToggle = new ActionBarDrawerToggle(
+                getActivity(),                    /* host Activity */
                 mDrawerLayout,                    /* DrawerLayout object */
-                toolbar,             /* nav drawer image to replace 'Up' caret */
+                R.drawable.ic_drawer,             /* nav drawer image to replace 'Up' caret */
                 R.string.navigation_drawer_open,  /* "open drawer" description for accessibility */
                 R.string.navigation_drawer_close  /* "close drawer" description for accessibility */
         ) {
             @Override
             public void onDrawerClosed(View drawerView) {
                 super.onDrawerClosed(drawerView);
-                /*if (!isAdded()) {
+                if (!isAdded()) {
                     return;
-                }*/
+                }
 
-                //mContext.invalidateOptionsMenu(); // calls onPrepareOptionsMenu()
+                getActivity().invalidateOptionsMenu(); // calls onPrepareOptionsMenu()
             }
 
             @Override
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
-               /* if (!isAdded()) {
+                if (!isAdded()) {
                     return;
-                }*/
+                }
 
                 if (!mUserLearnedDrawer) {
                     // The user manually opened the drawer; store this flag to prevent auto-showing
                     // the navigation drawer automatically in the future.
                     mUserLearnedDrawer = true;
                     SharedPreferences sp = PreferenceManager
-                            .getDefaultSharedPreferences(mContext);
+                            .getDefaultSharedPreferences(getActivity());
                     sp.edit().putBoolean(PREF_USER_LEARNED_DRAWER, true).apply();
                 }
 
-                //getActivity().invalidateOptionsMenu(); // calls onPrepareOptionsMenu()
+                getActivity().invalidateOptionsMenu(); // calls onPrepareOptionsMenu()
             }
         };
 
@@ -222,7 +202,6 @@ public class NavigationDrawerFragment extends AppCompatActivity
         }
     }
 
-/*
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
@@ -238,7 +217,6 @@ public class NavigationDrawerFragment extends AppCompatActivity
         super.onDetach();
         mCallbacks = null;
     }
-*/
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
@@ -253,15 +231,15 @@ public class NavigationDrawerFragment extends AppCompatActivity
         mDrawerToggle.onConfigurationChanged(newConfig);
     }
 
-    //@Override
+    @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         // If the drawer is open, show the global app actions in the action bar. See also
         // showGlobalContextActionBar, which controls the top-left area of the action bar.
         if (mDrawerLayout != null && isDrawerOpen()) {
-            inflater.inflate(R.menu.main, menu);
+            inflater.inflate(R.menu.global, menu);
             showGlobalContextActionBar();
         }
-        //super.onCreateOptionsMenu(menu, inflater);
+        super.onCreateOptionsMenu(menu, inflater);
     }
 
     @Override
@@ -271,19 +249,13 @@ public class NavigationDrawerFragment extends AppCompatActivity
         }
 
         if (item.getItemId() == R.id.action_example) {
-            Toast.makeText(mContext, "Example action.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "Example action.", Toast.LENGTH_SHORT).show();
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        return false;
-    }
     /**
      * Per the navigation drawer design guidelines, updates the action bar to show the global app
      * 'context', rather than just what's in the current screen.
@@ -295,9 +267,9 @@ public class NavigationDrawerFragment extends AppCompatActivity
         actionBar.setTitle(R.string.app_name);
     }
 
-   /* private ActionBar getActionBar() {
+    private ActionBar getActionBar() {
         return getActivity().getActionBar();
-    }*/
+    }
 
     /**
      * Callbacks interface that all activities using this fragment must implement.
